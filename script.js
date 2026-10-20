@@ -48,14 +48,40 @@ const QUESTIONS = [
 ["Why does the first ice usually remain at the surface of a pond?",["It is less dense than the liquid water","It has no mass","It is pulled upward by gravity","It is a gas"]],
 ["If ice sank instead of floated, which winter habitat would be most affected?",["The liquid-water habitat beneath surface ice","The dry soil above the pond","Clouds above the pond","Sunlight in space"]],
 ["Which pair is correctly matched?",["Heating: expansion; cooling: contraction","Heating: contraction; cooling: expansion","Heating: freezing; cooling: boiling","Heating: no particle motion; cooling: faster motion"]],
-["What idea connects road cracks, bridge joints, and changes in particle motion?",["Temperature can cause materials to expand or contract","All materials have the same density","Ice is denser than liquid water","Particles disappear when cooled"]]
+["What idea connects road cracks, bridge joints, and changes in particle motion?",["Temperature can cause materials to expand or contract","All materials have the same density","Ice is denser than liquid water","Particles disappear when cooled"]],
+["What is the particle model of matter?",["The idea that all matter is made up of tiny particles","The theory that energy is created from matter","The concept that matter cannot be created or destroyed","The belief that temperature does not affect matter"]],
+  ["What happens to particle movement when temperature increases?",["Particles move faster","Particles move more slowly","Particles stop moving","Temperature has no effect on particles"]],
+  ["What happens to water particles when water freezes?",["They move more slowly and form an organized structure","They move faster and spread out","Their attractive forces disappear","They turn into different particles"]],
+  ["At what temperatures does water freeze and boil on the Celsius scale?",["Water freezes at 0 degrees Celsius and boils at 100 degrees Celsius","Water freezes at 32 degrees Celsius and boils at 212 degrees Celsius","Water freezes at 0 degrees Fahrenheit and boils at 100 degrees Fahrenheit","Water freezes at 32 degrees Celsius and boils at 100 degrees Celsius"]],
+  ["What is the change from a gas to a liquid called?",["Condensation","Evaporation","Freezing","Melting"]],
+  ["Which action would increase the rate of evaporation of water?",["Heating the water","Cooling the water","Freezing the water","Lowering its temperature"]],
+  ["What is the process in which a solid changes directly into a gas?",["Sublimation","Melting","Freezing","Condensation"]],
+  ["Why can heating a balloon filled with air cause it to expand or eventually pop?",["Air particles move faster and spread out","Air particles shrink","Air particles stop moving","Air particles disappear"]],
+  ["Why is thermal expansion and contraction important to consider when constructing buildings and other structures?",["It helps prevent cracking, bending, or other damage","It makes structures more colourful","It reduces their weight","It prevents all heat loss"]],
+  ["Why do bridges often have expansion joints?",["To allow materials to expand and contract as temperatures change","To reduce the bridge's weight","To make the bridge look better","To make the bridge shorter"]],
+  ["Which property of matter stays the same when matter changes state in a closed system?",["Mass","Volume","Density","Shape"]],
+  ["Why is particle theory useful?",["It helps explain changes of state, expansion, contraction, and the behaviour of materials","It only explains why objects have colour","It proves that particles never move","It only applies to solids"]],
+  ["True or false: Particles in solids do not move.",["False","True"]],
+  ["True or false: The arrangement and movement of particles help determine the state of matter.",["True","False"]],
+  ["True or false: Gas particles are far apart and move rapidly.",["True","False"]],
+  ["True or false: The volume of a substance always stays the same during a phase change.",["False","True"]],
+  ["True or false: Ice is less dense than liquid water.",["True","False"]],
+  ["True or false: Attractive forces between particles generally become less effective as particles gain thermal energy and move farther apart.",["True","False"]],
+  ["What does expansion mean?",["An increase in size or volume","A decrease in size or volume","A liquid becoming a solid","A gas becoming a liquid"]],
+  ["Which state of matter has no definite shape or definite volume?",["Gas","Solid","Liquid","Ice"]],
+  ["What is a phase change?",["Matter changing from one state to another","Matter disappearing","Matter gaining mass","Matter changing into energy"]],
+  ["What is contraction?",["A decrease in size or volume","An increase in size or volume","A solid becoming a liquid","A liquid becoming a gas"]],
+  ["Which state of matter has a definite volume but takes the shape of its container?",["Liquid","Solid","Gas","All states"]],
+  ["What is the process of a solid changing into a liquid?",["Melting","Freezing","Condensation","Sublimation"]],
+  ["Which state of matter has a definite shape and a definite volume?",["Solid","Liquid","Gas","All three"]],
+  ["What is the process of a liquid changing into a solid?",["Freezing","Melting","Evaporation","Condensation"]],
+  ["How does a liquid thermometer work?",["The liquid expands when heated and contracts when cooled","The liquid changes into a gas whenever it gets warm","The glass expands but the liquid does not","The liquid changes colour because its particles stop moving"]],
+  ["Why can a layer of ice on a lake help protect aquatic life during winter?",["Ice floats and helps insulate the liquid water underneath","Ice sinks and heats the bottom of the lake","Ice causes all the water underneath to freeze","Fish can breathe through ice"]],
+  ["What could happen if solid water were denser than liquid water?",["Ice would sink","Ice would float higher","Water would no longer freeze","Water would boil at a lower temperature"]],
+  ["When ice is heated and begins to melt, what happens to its particles?",["They gain energy and can move more freely","They lose energy and stop moving","They disappear","They become gas immediately"]],
+  ["When liquid water is heated enough to become a gas, what happens to its particles?",["They gain energy and move farther apart","They lose energy","They become smaller","They stop moving"]],
+  ["Which sequence correctly describes water changing from ice to water vapour?",["Melting, then evaporation","Freezing, then condensation","Condensation, then freezing","Evaporation, then melting"]],
+  ["Which is a real-world example of condensation?",["Water droplets forming on the outside of a cold glass","An ice cube melting","A puddle drying","Water freezing in an ice tray"]],
+  ["Which is a real-world example of evaporation?",["A puddle slowly disappearing on a warm day","Water turning into ice","Frost forming","Water droplets forming on a cold surface"]]
 ];
-const QUIZ_SIZE=10;let quiz=[],current=0,score=0,answered=false;
-const $=id=>document.getElementById(id);
-function shuffled(a){return [...a].sort(()=>Math.random()-.5)}
-function start(){quiz=shuffled(QUESTIONS).slice(0,QUIZ_SIZE).map(([question,choices])=>{const answer=choices[0];return{question,answer,choices:shuffled(choices)}});current=0;score=0;answered=false;$('result').classList.add('hidden');$('quiz').classList.remove('hidden');render()}
-function render(){const q=quiz[current];$('progressText').textContent=`Question ${current+1} of ${QUIZ_SIZE}`;$('scoreText').textContent=`Score ${score}`;$('progressBar').style.width=`${((current+1)/QUIZ_SIZE)*100}%`;$('question').textContent=q.question;$('feedback').textContent='';$('feedback').className='feedback';$('nextBtn').disabled=true;$('nextBtn').textContent=current===QUIZ_SIZE-1?'See Results':'Next Question';answered=false;const box=$('answers');box.innerHTML='';q.choices.forEach((text,i)=>{const b=document.createElement('button');b.className='answer';b.textContent=`${String.fromCharCode(65+i)}. ${text}`;b.onclick=()=>choose(b,text);box.appendChild(b)})}
-function choose(btn,text){if(answered)return;answered=true;const q=quiz[current];document.querySelectorAll('.answer').forEach(b=>{b.disabled=true;if(b.textContent.slice(3)===q.answer)b.classList.add('correct')});if(text===q.answer){score++;$('feedback').textContent='Correct!';$('feedback').classList.add('good')}else{btn.classList.add('wrong');$('feedback').textContent=`Not quite. The correct answer is: ${q.answer}`;$('feedback').classList.add('bad')}$('scoreText').textContent=`Score ${score}`;$('nextBtn').disabled=false}
-$('nextBtn').onclick=()=>{if(current<QUIZ_SIZE-1){current++;render()}else finish()};
-function finish(){$('quiz').classList.add('hidden');$('result').classList.remove('hidden');$('finalScore').textContent=`You scored ${score} out of ${QUIZ_SIZE}.`;const pct=score/QUIZ_SIZE;$('finalMessage').textContent=pct===1?'Perfect score! Excellent work!':pct>=.8?'Great job! You know this material well.':pct>=.6?'Nice work! Keep practising.':'Keep practising. A new quiz will give you a different mix of questions.'}
-$('restartBtn').onclick=start;start();
+const QUIZ_SIZE=10
