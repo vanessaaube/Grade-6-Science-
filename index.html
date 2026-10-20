@@ -1,0 +1,399 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="An interactive Grade 6 science study quiz based on pages 3-23 of the Particles of Matter printables.">
+  <title>Matter Lab | Grade 6 Science</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#quiz">Skip to questions</a>
+
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="Matter Lab home">
+      <span class="brand-mark" aria-hidden="true">M</span>
+      <span>Matter Lab</span>
+    </a>
+    <nav aria-label="Page sections">
+      <a href="#particle-model">Particles</a>
+      <a href="#heat-changes">Heat + phases</a>
+      <a href="#temperature">Temperature</a>
+      <a href="#real-world">Real world</a>
+      <a href="#written">Explain it</a>
+    </nav>
+    <button class="nav-progress" type="button" data-scroll-results>
+      <span id="headerProgress">0 / 30</span>
+      <span class="mini-track" aria-hidden="true"><span id="miniFill"></span></span>
+    </button>
+  </header>
+
+  <main id="top">
+    <section class="hero" aria-labelledby="page-title">
+      <div class="hero-copy">
+        <p class="eyebrow">Grade 6 science · Pages 3-23 study review</p>
+        <h1 id="page-title">Tiny particles.<br><span>Big changes.</span></h1>
+        <p class="hero-lede">Study the particle model of matter, thermal energy, phase changes, temperature, expansion and contraction, and water's unusual freezing behaviour.</p>
+        <div class="hero-actions">
+          <a class="button primary" href="#quiz">Start the review <span aria-hidden="true">↓</span></a>
+          <button class="button quiet" type="button" id="resetTop">Reset answers</button>
+        </div>
+        <ul class="hero-stats" aria-label="Review details">
+          <li><strong>30</strong><span>auto-checked items</span></li>
+          <li><strong>5</strong><span>learning sections</span></li>
+          <li><strong>4</strong><span>written explanations</span></li>
+        </ul>
+      </div>
+
+      <div class="matter-visual" aria-label="Particle diagrams for solids, liquids, and gases">
+        <div class="visual-heading">
+          <span>Particle view</span>
+          <span class="live-dot">study model</span>
+        </div>
+        <div class="state-card solid-card">
+          <div class="particle-box solid-particles" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+          <div><strong>Solid</strong><span>packed + vibrating</span></div>
+        </div>
+        <div class="state-card liquid-card">
+          <div class="particle-box liquid-particles" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+          <div><strong>Liquid</strong><span>close + sliding</span></div>
+        </div>
+        <div class="state-card gas-card">
+          <div class="particle-box gas-particles" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+          <div><strong>Gas</strong><span>far apart + fast</span></div>
+        </div>
+        <p class="visual-note"><span aria-hidden="true">↗</span> Adding heat energy makes particles move faster and usually farther apart.</p>
+      </div>
+    </section>
+
+    <section class="concept-strip" aria-label="Changes of state summary">
+      <div><span>solid</span><b>melting →</b><span>liquid</span><b>evaporation →</b><span>gas</span></div>
+      <div><span>gas</span><b>← condensation</b><span>liquid</span><b>← freezing</b><span>solid</span></div>
+    </section>
+
+    <section class="quiz-shell" id="quiz" aria-labelledby="quiz-title">
+      <aside class="quiz-sidebar" aria-label="Review progress">
+        <p class="eyebrow">Your progress</p>
+        <div class="progress-ring" id="progressRing" style="--progress:0%"><span id="progressPercent">0%</span></div>
+        <h2 id="quiz-title">Matter review</h2>
+        <p id="progressMessage">Ready when you are.</p>
+        <ol class="section-list">
+          <li><a href="#particle-model"><span>01</span> Particle model</a></li>
+          <li><a href="#heat-changes"><span>02</span> Heat + phases</a></li>
+          <li><a href="#temperature"><span>03</span> Temperature</a></li>
+          <li><a href="#real-world"><span>04</span> Real world</a></li>
+          <li><a href="#written"><span>05</span> Explain it</a></li>
+        </ol>
+        <button class="button primary full" type="button" id="checkSidebar">Check my answers</button>
+      </aside>
+
+      <form class="quiz-content" id="matterQuiz" novalidate>
+        <section class="question-section" id="particle-model" aria-labelledby="particle-title">
+          <div class="section-heading">
+            <span class="section-number">01</span>
+            <div><p class="eyebrow">Pages 3-4 and 21-23</p><h2 id="particle-title">Particle model and properties</h2></div>
+          </div>
+
+          <article class="question-card">
+            <div class="question-meta"><span>1</span><em>Choose one</em></div>
+            <h3>Which statement best defines matter?</h3>
+            <div class="option-grid check-unit" data-type="radio" data-answer="mass-space" data-label="Question 1">
+              <label><input type="radio" name="q1" value="seen"><span>Anything that can be seen</span></label>
+              <label><input type="radio" name="q1" value="mass-space"><span>Anything that has mass and takes up space</span></label>
+              <label><input type="radio" name="q1" value="solid"><span>Only objects that are solid</span></label>
+              <label><input type="radio" name="q1" value="living"><span>Only living things</span></label>
+            </div>
+          </article>
+
+          <article class="question-card accent-card">
+            <div class="question-meta"><span>2</span><em>Select all that apply</em></div>
+            <h3>Which statements are part of the particle model of matter?</h3>
+            <div class="options check-unit" data-type="checkbox" data-answer="attract,moving,spaces,tiny" data-label="Question 2">
+              <label><input type="checkbox" name="q2" value="tiny"><span>All matter is made of tiny particles.</span></label>
+              <label><input type="checkbox" name="q2" value="moving"><span>Particles are always moving.</span></label>
+              <label><input type="checkbox" name="q2" value="spaces"><span>There are spaces between particles.</span></label>
+              <label><input type="checkbox" name="q2" value="attract"><span>Particles attract one another.</span></label>
+              <label><input type="checkbox" name="q2" value="temperature-none"><span>Temperature never affects particle movement.</span></label>
+            </div>
+          </article>
+
+          <article class="question-card split-question">
+            <div>
+              <div class="question-meta"><span>3</span><em>Choose one</em></div>
+              <h3>How are particles arranged in a solid?</h3>
+              <div class="options check-unit" data-type="radio" data-answer="packed" data-label="Question 3">
+                <label><input type="radio" name="q3" value="packed"><span>Tightly packed; vibrating in place; strong attraction</span></label>
+                <label><input type="radio" name="q3" value="sliding"><span>Close together; sliding past one another</span></label>
+                <label><input type="radio" name="q3" value="far"><span>Far apart; moving rapidly in all directions</span></label>
+              </div>
+            </div>
+            <div>
+              <div class="question-meta"><span>4</span><em>Choose one</em></div>
+              <h3>How do particles behave in a liquid?</h3>
+              <div class="options check-unit" data-type="radio" data-answer="sliding" data-label="Question 4">
+                <label><input type="radio" name="q4" value="fixed"><span>They stay in fixed positions.</span></label>
+                <label><input type="radio" name="q4" value="sliding"><span>They remain close but slide past one another.</span></label>
+                <label><input type="radio" name="q4" value="far"><span>They are very far apart with weak attraction.</span></label>
+              </div>
+            </div>
+          </article>
+
+          <article class="question-card">
+            <div class="question-meta"><span>5</span><em>Choose one</em></div>
+            <h3>Which description best fits gas particles?</h3>
+            <div class="option-grid check-unit" data-type="radio" data-answer="far-fast" data-label="Question 5">
+              <label><input type="radio" name="q5" value="fixed"><span>Packed tightly and fixed in place</span></label>
+              <label><input type="radio" name="q5" value="close"><span>Close together with medium attraction</span></label>
+              <label><input type="radio" name="q5" value="far-fast"><span>Far apart, moving rapidly, with weak attraction</span></label>
+              <label><input type="radio" name="q5" value="still"><span>Far apart but completely still</span></label>
+            </div>
+          </article>
+
+          <article class="question-card">
+            <div class="question-meta"><span>6-10</span><em>Match the property</em></div>
+            <h3>Choose the correct matter property for each definition.</h3>
+            <div class="matching-list">
+              <label class="match-row check-unit" data-type="select" data-answer="mass" data-label="Question 6"><span>The amount of matter in a substance</span><select name="q6"><option value="">Select term...</option><option>mass</option><option>volume</option><option>density</option><option>compressibility</option><option>attractive forces</option></select></label>
+              <label class="match-row check-unit" data-type="select" data-answer="volume" data-label="Question 7"><span>The amount of space a substance takes up</span><select name="q7"><option value="">Select term...</option><option>mass</option><option>volume</option><option>density</option><option>compressibility</option><option>attractive forces</option></select></label>
+              <label class="match-row check-unit" data-type="select" data-answer="density" data-label="Question 8"><span>How tightly packed the particles are</span><select name="q8"><option value="">Select term...</option><option>mass</option><option>volume</option><option>density</option><option>compressibility</option><option>attractive forces</option></select></label>
+              <label class="match-row check-unit" data-type="select" data-answer="compressibility" data-label="Question 9"><span>How easily a substance can be squeezed into a smaller space</span><select name="q9"><option value="">Select term...</option><option>mass</option><option>volume</option><option>density</option><option>compressibility</option><option>attractive forces</option></select></label>
+              <label class="match-row check-unit" data-type="select" data-answer="attractive forces" data-label="Question 10"><span>The forces that hold particles together</span><select name="q10"><option value="">Select term...</option><option>mass</option><option>volume</option><option>density</option><option>compressibility</option><option>attractive forces</option></select></label>
+            </div>
+          </article>
+        </section>
+
+        <section class="question-section" id="heat-changes" aria-labelledby="changes-title">
+          <div class="section-heading">
+            <span class="section-number">02</span>
+            <div><p class="eyebrow">Pages 5-10</p><h2 id="changes-title">Heat energy and phase changes</h2></div>
+          </div>
+
+          <article class="question-card accent-card">
+            <div class="question-meta"><span>11-12</span><em>Select all that apply</em></div>
+            <h3>Compare what happens when heat energy is added or removed.</h3>
+            <div class="split-question">
+              <div>
+                <p><strong>11. Heat energy is added:</strong></p>
+                <div class="options check-unit" data-type="checkbox" data-answer="faster,forces-weaken,spaces-increase" data-label="Question 11">
+                  <label><input type="checkbox" name="q11" value="faster"><span>Particles move faster.</span></label>
+                  <label><input type="checkbox" name="q11" value="spaces-increase"><span>Spaces between particles increase.</span></label>
+                  <label><input type="checkbox" name="q11" value="forces-weaken"><span>Attractive forces weaken.</span></label>
+                  <label><input type="checkbox" name="q11" value="closer"><span>Particles move closer together.</span></label>
+                </div>
+              </div>
+              <div>
+                <p><strong>12. Heat energy is removed:</strong></p>
+                <div class="options check-unit" data-type="checkbox" data-answer="closer,forces-stronger,slower" data-label="Question 12">
+                  <label><input type="checkbox" name="q12" value="slower"><span>Particles move more slowly.</span></label>
+                  <label><input type="checkbox" name="q12" value="closer"><span>Particles move closer together.</span></label>
+                  <label><input type="checkbox" name="q12" value="forces-stronger"><span>Attractive forces become stronger.</span></label>
+                  <label><input type="checkbox" name="q12" value="faster"><span>Particles move faster.</span></label>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="question-card">
+            <div class="question-meta"><span>13</span><em>Apply the model</em></div>
+            <h3>Why does a balloon filled with air expand when it is heated?</h3>
+            <div class="options check-unit" data-type="radio" data-answer="move-spread" data-label="Question 13">
+              <label><input type="radio" name="q13" value="grow"><span>Each air particle grows much larger.</span></label>
+              <label><input type="radio" name="q13" value="move-spread"><span>Air particles move faster and spread farther apart, pushing outward.</span></label>
+              <label><input type="radio" name="q13" value="new"><span>Heating creates many new air particles.</span></label>
+            </div>
+          </article>
+
+          <article class="question-card">
+            <div class="question-meta"><span>14</span><em>Choose one</em></div>
+            <h3>What is a phase change?</h3>
+            <div class="option-grid check-unit" data-type="radio" data-answer="state" data-label="Question 14">
+              <label><input type="radio" name="q14" value="state"><span>A substance changing from one state of matter to another</span></label>
+              <label><input type="radio" name="q14" value="new-substance"><span>A substance always becoming a new kind of matter</span></label>
+              <label><input type="radio" name="q14" value="size"><span>A solid being cut into smaller pieces</span></label>
+              <label><input type="radio" name="q14" value="mix"><span>Two substances being stirred together</span></label>
+            </div>
+          </article>
+
+          <article class="question-card">
+            <div class="question-meta"><span>15-20</span><em>Energy in phase changes</em></div>
+            <h3>Decide whether energy is absorbed or released.</h3>
+            <div class="matching-list">
+              <label class="match-row check-unit" data-type="select" data-answer="absorbed" data-label="Question 15"><span>Melting</span><select name="q15"><option value="">Choose...</option><option>absorbed</option><option>released</option></select></label>
+              <label class="match-row check-unit" data-type="select" data-answer="released" data-label="Question 16"><span>Freezing</span><select name="q16"><option value="">Choose...</option><option>absorbed</option><option>released</option></select></label>
+              <label class="match-row check-unit" data-type="select" data-answer="absorbed" data-label="Question 17"><span>Evaporation</span><select name="q17"><option value="">Choose...</option><option>absorbed</option><option>released</option></select></label>
+              <label class="match-row check-unit" data-type="select" data-answer="released" data-label="Question 18"><span>Condensation</span><select name="q18"><option value="">Choose...</option><option>absorbed</option><option>released</option></select></label>
+              <label class="match-row check-unit" data-type="select" data-answer="absorbed" data-label="Question 19"><span>Sublimation</span><select name="q19"><option value="">Choose...</option><option>absorbed</option><option>released</option></select></label>
+              <label class="match-row check-unit" data-type="select" data-answer="released" data-label="Question 20"><span>Deposition</span><select name="q20"><option value="">Choose...</option><option>absorbed</option><option>released</option></select></label>
+            </div>
+          </article>
+
+          <article class="question-card illustration-card lake-card">
+            <div class="lake-illustration" aria-hidden="true"><span class="ice-layer"></span><i></i><i></i><i></i></div>
+            <div>
+              <div class="question-meta"><span>21</span><em>Ice + salt experiment</em></div>
+              <h3>What happened when students sprinkled salt on ice?</h3>
+              <div class="options check-unit" data-type="radio" data-answer="lowered" data-label="Question 21">
+                <label><input type="radio" name="q21" value="raised"><span>The salt raised water's freezing point and stopped melting.</span></label>
+                <label><input type="radio" name="q21" value="lowered"><span>The salt lowered water's freezing point, so the ice melted faster.</span></label>
+                <label><input type="radio" name="q21" value="boiled"><span>The salt made the ice boil immediately.</span></label>
+              </div>
+            </div>
+          </article>
+        </section>
+
+        <section class="question-section" id="temperature" aria-labelledby="temperature-title">
+          <div class="section-heading">
+            <span class="section-number">03</span>
+            <div><p class="eyebrow">Pages 11-13</p><h2 id="temperature-title">Measuring temperature</h2></div>
+          </div>
+
+          <article class="question-card illustration-card thermometer-card">
+            <div class="thermometer-illustration" aria-hidden="true"><i></i><b></b><span>°C</span></div>
+            <div>
+              <div class="question-meta"><span>22</span><em>Liquid thermometer</em></div>
+              <h3>How does a traditional liquid thermometer respond when temperature rises?</h3>
+              <div class="options check-unit" data-type="radio" data-answer="expands-rises" data-label="Question 22">
+                <label><input type="radio" name="q22" value="expands-rises"><span>The liquid expands and rises in the narrow tube.</span></label>
+                <label><input type="radio" name="q22" value="contracts-rises"><span>The liquid contracts but rises in the tube.</span></label>
+                <label><input type="radio" name="q22" value="mass"><span>The liquid gains mass and sinks.</span></label>
+              </div>
+            </div>
+          </article>
+
+          <article class="question-card">
+            <div class="question-meta"><span>23</span><em>Choose one</em></div>
+            <h3>Which thermometer described in the reading uses electronic sensors and displays a reading on a screen?</h3>
+            <div class="options check-unit" data-type="radio" data-answer="digital" data-label="Question 23">
+              <label><input type="radio" name="q23" value="mercury"><span>Mercury thermometer</span></label>
+              <label><input type="radio" name="q23" value="alcohol"><span>Dyed-alcohol glass thermometer</span></label>
+              <label><input type="radio" name="q23" value="digital"><span>Digital thermometer</span></label>
+            </div>
+          </article>
+
+          <article class="question-card temperature-card">
+            <div class="thermo-scale" aria-hidden="true"><span>100°</span><span>0°</span></div>
+            <div class="temperature-questions">
+              <div class="question-meta"><span>24-25</span><em>Celsius scale</em></div>
+              <h3>Choose water's freezing and boiling points.</h3>
+              <div class="sentence check-unit" data-type="select" data-answer="0" data-label="Question 24">
+                <span>Water freezes at</span>
+                <select name="q24" aria-label="Freezing point of water"><option value="">Choose...</option><option value="-10">-10 °C</option><option value="0">0 °C</option><option value="10">10 °C</option></select>
+              </div>
+              <div class="sentence check-unit" data-type="select" data-answer="100" data-label="Question 25">
+                <span>Water boils at</span>
+                <select name="q25" aria-label="Boiling point of water"><option value="">Choose...</option><option value="50">50 °C</option><option value="100">100 °C</option><option value="212">212 °C</option></select>
+              </div>
+            </div>
+          </article>
+        </section>
+
+        <section class="question-section" id="real-world" aria-labelledby="world-title">
+          <div class="section-heading">
+            <span class="section-number">04</span>
+            <div><p class="eyebrow">Pages 14-19</p><h2 id="world-title">Expansion, contraction, and water</h2></div>
+          </div>
+
+          <article class="question-card illustration-card bridge-card">
+            <div class="mini-illustration" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+            <div>
+              <div class="question-meta"><span>26</span><em>Extreme cold</em></div>
+              <h3>Why can extreme cold damage a bridge made from different materials?</h3>
+              <div class="options check-unit" data-type="radio" data-answer="different-rates" data-label="Question 26">
+                <label><input type="radio" name="q26" value="different-rates"><span>Materials can contract at different rates and create stress in the structure.</span></label>
+                <label><input type="radio" name="q26" value="gain-mass"><span>Every material gains a large amount of mass in the cold.</span></label>
+                <label><input type="radio" name="q26" value="melt"><span>Steel and concrete melt when temperatures fall.</span></label>
+              </div>
+            </div>
+          </article>
+
+          <article class="question-card">
+            <div class="question-meta"><span>27</span><em>Engineering</em></div>
+            <h3>How can expansion joints help protect a bridge?</h3>
+            <div class="option-grid check-unit" data-type="radio" data-answer="movement" data-label="Question 27">
+              <label><input type="radio" name="q27" value="movement"><span>They give materials room to expand and contract.</span></label>
+              <label><input type="radio" name="q27" value="freeze"><span>They force every material to freeze at the same temperature.</span></label>
+              <label><input type="radio" name="q27" value="weight"><span>They remove all weight from the bridge.</span></label>
+              <label><input type="radio" name="q27" value="heat"><span>They permanently heat the bridge.</span></label>
+            </div>
+          </article>
+
+          <article class="question-card">
+            <div class="question-meta"><span>28</span><em>Water's unusual property</em></div>
+            <h3>Why does ice float on liquid water?</h3>
+            <div class="options check-unit" data-type="radio" data-answer="less-dense" data-label="Question 28">
+              <label><input type="radio" name="q28" value="less-dense"><span>Water expands as it freezes, so ice is less dense than liquid water.</span></label>
+              <label><input type="radio" name="q28" value="more-dense"><span>Water contracts as it freezes, so ice is more dense.</span></label>
+              <label><input type="radio" name="q28" value="no-particles"><span>Ice has no particles, so it has no weight.</span></label>
+            </div>
+          </article>
+
+          <article class="question-card illustration-card lake-card">
+            <div class="lake-illustration" aria-hidden="true"><span class="ice-layer"></span><i></i><i></i><i></i></div>
+            <div>
+              <div class="question-meta"><span>29</span><em>Life under ice</em></div>
+              <h3>How does a floating layer of ice help aquatic life survive winter?</h3>
+              <div class="options check-unit" data-type="radio" data-answer="insulates" data-label="Question 29">
+                <label><input type="radio" name="q29" value="insulates"><span>It insulates the water below and helps prevent the whole lake from freezing solid.</span></label>
+                <label><input type="radio" name="q29" value="oxygen"><span>It changes directly into oxygen for fish.</span></label>
+                <label><input type="radio" name="q29" value="boils"><span>It makes the lower water boil.</span></label>
+              </div>
+            </div>
+          </article>
+
+          <article class="question-card accent-card">
+            <div class="question-meta"><span>30</span><em>Select all that apply</em></div>
+            <h3>If ice were denser than liquid water, what would likely happen in winter?</h3>
+            <div class="options check-unit" data-type="checkbox" data-answer="bottom,ecosystems,sink" data-label="Question 30">
+              <label><input type="checkbox" name="q30" value="sink"><span>Ice would sink instead of floating.</span></label>
+              <label><input type="checkbox" name="q30" value="bottom"><span>Lakes could freeze from the bottom upward.</span></label>
+              <label><input type="checkbox" name="q30" value="ecosystems"><span>Aquatic ecosystems could be seriously disrupted.</span></label>
+              <label><input type="checkbox" name="q30" value="same"><span>Lakes and ponds would be affected in exactly the same way as they are now.</span></label>
+            </div>
+          </article>
+        </section>
+
+        <section class="question-section" id="written" aria-labelledby="written-title">
+          <div class="section-heading">
+            <span class="section-number">05</span>
+            <div><p class="eyebrow">Use evidence from pages 3-23</p><h2 id="written-title">Explain with particle theory</h2></div>
+          </div>
+          <article class="question-card written-card">
+            <p class="written-intro">Use complete sentences and scientific vocabulary. These responses are saved in this browser but are not part of the auto-score.</p>
+
+            <label class="response-block"><span><b>A.</b> Explain how adding heat energy changes particle movement, spacing, and attractive forces.</span><textarea name="writtenA" rows="5" placeholder="When heat energy is added..."></textarea></label>
+            <details><summary>Compare with a strong answer</summary><p>When heat energy is added, particles gain energy and move faster. The spaces between them usually increase, and the attractive forces between them weaken. Enough added energy can cause a change from solid to liquid or liquid to gas.</p></details>
+
+            <label class="response-block"><span><b>B.</b> Describe what happens to water particles when liquid water freezes.</span><textarea name="writtenB" rows="5" placeholder="As heat energy is removed..."></textarea></label>
+            <details><summary>Compare with a strong answer</summary><p>As heat energy is removed, water particles lose energy and move more slowly. They become arranged in a solid crystalline structure. Water is unusual because this frozen structure takes up more space, making ice less dense than liquid water.</p></details>
+
+            <label class="response-block"><span><b>C.</b> Explain why engineers must plan for thermal expansion and contraction in bridges or roads.</span><textarea name="writtenC" rows="5" placeholder="When temperatures change, construction materials..."></textarea></label>
+            <details><summary>Compare with a strong answer</summary><p>Construction materials expand when heated and contract when cooled. Different materials may change size at different rates, creating stress and cracks. Expansion joints, insulation, and suitable materials give structures room to move safely.</p></details>
+
+            <label class="response-block"><span><b>D.</b> Explain why ice floats and how this property helps aquatic life in cold climates.</span><textarea name="writtenD" rows="5" placeholder="Water expands when it freezes..."></textarea></label>
+            <details><summary>Compare with a strong answer</summary><p>Water expands when it freezes, so ice is less dense than liquid water and floats. The surface ice forms an insulating layer that helps keep deeper water liquid, allowing aquatic organisms to survive through winter.</p></details>
+          </article>
+        </section>
+
+        <section class="results-panel" id="results" aria-live="polite">
+          <div>
+            <p class="eyebrow">Study check</p>
+            <h2 id="scoreHeading">Check your answers when you're ready.</h2>
+            <p id="scoreMessage">You can revise and check again as many times as you like.</p>
+          </div>
+          <div class="results-actions">
+            <button class="button primary" type="button" id="checkAnswers">Check my answers</button>
+            <button class="button quiet" type="reset" id="resetBottom">Start over</button>
+          </div>
+          <div class="score-bar" aria-hidden="true"><span id="scoreFill"></span></div>
+        </section>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <div><span class="brand-mark small" aria-hidden="true">M</span><strong>Matter Lab</strong></div>
+    <p>Observe · question · explain</p>
+  </footer>
+</body>
+</html>
